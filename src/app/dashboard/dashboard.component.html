@@ -1,0 +1,69 @@
+<nav class="navbar navbar-app navbar-expand-lg navbar-dark bg-dark w-100 apps">
+  <a style="padding-left: 15px;" class="navbar-brand" app-nav href="#">iCoder</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse"
+    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+
+  <div class="app-menu" id="app-menu" >
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="about" class="nav-link" href="/about.html">About</a>
+      </li>
+      <div class="btn-group" dropdown>
+        <button id="button-basic" dropdownToggle type="button" class="btn  dropdown-toggle button1"
+          aria-controls="dropdown-basic">
+          Topics <span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#">Technology</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Web development</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">C++</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" href="#">Support</a>
+          <li role="menuitem"><a class="dropdown-item" href="#">write for us</a>
+          </li>
+        </ul>
+      </div>
+
+      <li class="nav-item">
+        <a routerLink="contact" class="nav-link" href="#">Contacts Us</a>
+      </li>
+    </ul>
+  </div>
+  <div class="form-inline my-2 my-lg-0 " style="
+  justify-content: flex-end;">
+    <button style="margin-right: 7px;" (click)="open()">
+      <span style="background-color: black;" class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="mx-2">
+      <button (click)="openModal(template)" style="margin-right: 8px;" class="btn btn-danger" data-toggle="modal">Login</button>
+      <button class="btn btn-danger" data-toggle="modal">Signup</button>
+    </div>
+  </div>
+</nav>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>
+
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>

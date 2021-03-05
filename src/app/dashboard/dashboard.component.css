@@ -1,0 +1,21 @@
+.button1 {
+    color: white;
+}
+li:hover {
+    background-color: black;
+}
+.apps {
+    padding: 0px !important;
+}
+
+.app-menu {
+    display: block;
+}
+
+@media only screen and (max-width:991px) {
+    .app-menu {
+        display: none;
+    }
+}
+
+
